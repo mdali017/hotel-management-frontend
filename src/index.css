@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Liter&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", serif;
+}
+
+:root {
+  --primary: #e11e26;
+  --secondary: #ef8d21;
+  --accent: #afca36;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Extra Design for header hover effect */
+.nav {
+  /* @apply relative text-gray-700  font-bold tracking-[1px]; */
+  @apply relative  font-bold tracking-[1px];
+}
+.nav::after {
+  @apply absolute content-[""] bg-primary bg-opacity-70 h-[3px] w-[0] duration-300 left-0  -bottom-[5px] rounded-xl;
+}
+.nav:hover::after {
+  @apply w-[100%];
+}
+
+
+
+.housekeeping-animated {
+  background: linear-gradient(-45deg, #000000, #ffa500, #ff59e3, #fcb900);
+  background-size: 400% 400%;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  animation: gradientShift 3s ease infinite, subtleMove 2s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+.housekeeping-animated:hover {
+  transform: scale(1.05);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.liter-regular {
+  font-family: "Liter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
